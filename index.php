@@ -37,7 +37,6 @@ connect();
         </option>
         <?php } ?>
       </select><br><br>
-      hej
 
       <label for="production_year_id">Production year:</label><br>
       <input type="text" id="production_year_id" name="production_year_id" value="yyyy"><br><br>
