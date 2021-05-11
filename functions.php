@@ -23,3 +23,24 @@ function connect() {
   //Vælge den database vi gerne vil bruge
   mysqli_select_db($conn, DBNAME);
   }
+
+
+
+
+  function type_select() {
+    global $conn;
+  //Vi laver en forespørgsel på id og titel
+    $sql = "SELECT id, type FROM type";
+    //Henter indholdet fra ovenstående
+    $result = mysqli_query($conn, $sql);
+    $type = [];
+
+  //Hvis det ovenstående er større end nul, skal den lave rows hvor resultatet er inde i
+    if(mysqli_num_rows($result) > 0){
+      while($row = mysqli_fetch_assoc($result)) {
+        //Vi sikre at det kun er title og id som bliver vist
+        $type[] = $row;
+      }
+    }
+    return $type;
+  }
