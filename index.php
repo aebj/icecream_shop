@@ -30,7 +30,13 @@ connect();
       <input type="date" id="expiration_date" name="expiration_date" value="yyyy-mm-dd"><br><br>
 
       <label for="type_id">Type:</label><br>
-      <input type="text" id="type_id" name="type_id" value=""><br><br>
+      <select id="type_id" name="type_id">
+        <?php foreach(select_type() as $type) { ?>
+        <option value="<?php echo $type['id']; ?>">
+          <?php echo $type['type']; ?>
+        </option>
+        <?php } ?>
+      </select><br><br>
 
       <label for="production_year_id">Production year:</label><br>
       <input type="text" id="production_year_id" name="production_year_id" value="yyyy"><br><br>

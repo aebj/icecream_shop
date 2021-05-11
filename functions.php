@@ -23,3 +23,25 @@ function connect() {
   //Vælge den database vi gerne vil bruge
   mysqli_select_db($conn, DBNAME);
   }
+
+  function select_type() {
+    global $conn;
+
+    // Henter id og titel fra databasen (kik på header.php)
+    $sql = 'SELECT id, type FROM type';
+    //
+    $result = mysqli_query($conn, $sql);
+    // Laver et tomt array
+    $type = [];
+
+    // Hvis mysqli er større end 0
+    if (mysqli_num_rows($result) > 0) {
+      // Databasen giver resultatet på forespørgelsen i $sql variablen
+      while($row = mysqli_fetch_assoc($result)) {
+        // Tilføjer informationen fra forespørgelsen til $nav array
+        $type[] = $row;
+      }
+    }
+
+    return $type;
+  }
