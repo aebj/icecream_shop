@@ -1,5 +1,15 @@
 <?php
-  include('functions.php');
+// Difinerer konstanter med database forbindelse info
+define('DBHOST', 'localhost');
+define('DBUSER', 'root');
+define('DBPASS', 'root');
+define('DBNAME', 'icecream_shop');
+
+// Inkluderer functions.php med alle funktioner
+include('functions.php');
+
+// Forbinder til databasen (se functions.php)
+connect();
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +19,7 @@
     <title>Icecream Shop</title>
   </head>
   <body>
-    <form action="/action_page.php">
+    <form action="submit_icecream.php" method="post">
       <label for="bar_code">Bar code:</label><br>
       <input type="text" id="bar_code" name="bar_code" value="Bar code"><br>
 
