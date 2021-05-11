@@ -1,3 +1,11 @@
+<?php
+
+$bar_code = $_POST['bar_code'];
+$stock = $_POST['stock'];
+$expiration_date = $_POST['expiration_date'];
+
+?>
+
 <html>
 <body>
 
