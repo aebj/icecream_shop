@@ -26,10 +26,9 @@ function connect() {
 
   function select_type() {
     global $conn;
-
-    // Henter id og titel fra databasen (kik på header.php)
-    $sql = 'SELECT id, type FROM type';
-    //
+  //Vi laver en forespørgsel på id og type
+    $sql = "SELECT id, type FROM type";
+    //Henter indholdet fra ovenstående
     $result = mysqli_query($conn, $sql);
     // Laver et tomt array
     $type = [];
@@ -38,7 +37,7 @@ function connect() {
     if (mysqli_num_rows($result) > 0) {
       // Databasen giver resultatet på forespørgelsen i $sql variablen
       while($row = mysqli_fetch_assoc($result)) {
-        // Tilføjer informationen fra forespørgelsen til $nav array
+        //Vi sikre at det kun er type og id som bliver vist
         $type[] = $row;
       }
     }
